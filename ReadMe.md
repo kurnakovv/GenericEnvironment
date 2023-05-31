@@ -2,6 +2,8 @@
  <img src="icon.png" weight="100px" height="100" />
  <h2>GenericEnvironment</h2>
 
+[![NuGet](https://img.shields.io/nuget/v/Kurnakov.GenericEnvironment.svg)](https://www.nuget.org/packages/Kurnakov.GenericEnvironment)
+ [![NuGet download](https://img.shields.io/nuget/dt/Kurnakov.GenericEnvironment.svg)](https://www.nuget.org/packages/Kurnakov.GenericEnvironment) 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FKurnakovMaksim%GenericEnvironment&countColor=%23263759&style=flat)
  [![Build/Test](https://github.com/KurnakovMaksim/GenericEnvironment/actions/workflows/dotnet.yml/badge.svg)](https://github.com/KurnakovMaksim/GenericEnvironment/actions/workflows/dotnet.yml)
 

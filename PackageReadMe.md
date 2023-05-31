@@ -1,3 +1,5 @@
+[![NuGet](https://img.shields.io/nuget/v/Kurnakov.GenericEnvironment.svg)](https://www.nuget.org/packages/Kurnakov.GenericEnvironment)
+ [![NuGet download](https://img.shields.io/nuget/dt/Kurnakov.GenericEnvironment.svg)](https://www.nuget.org/packages/Kurnakov.GenericEnvironment) 
  [![Build/Test](https://github.com/KurnakovMaksim/GenericEnvironment/actions/workflows/dotnet.yml/badge.svg)](https://github.com/KurnakovMaksim/GenericEnvironment/actions/workflows/dotnet.yml)
 
 
