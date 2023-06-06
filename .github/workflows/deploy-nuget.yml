@@ -31,8 +31,21 @@ jobs:
         fetch-depth: 0 # Get all history to allow automatic versioning using MinVer
 
     # Install the .NET SDK indicated in the global.json file
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core 3
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 3.1.x
+    - name: Setup .NET 5
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 5.0.x
+    - name: Setup .NET 6
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Setup .NET 7
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 7.0.x
 
@@ -52,8 +65,21 @@ jobs:
     needs: [ create_nuget ]
     steps:
       # Install the .NET SDK indicated in the global.json file
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core 3
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup .NET 5
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 5.0.x
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+      - name: Setup .NET 7
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 7.0.x
 
@@ -77,8 +103,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+    - name: Setup .NET Core 3
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 3.1.x
+    - name: Setup .NET 5
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 5.0.x
+    - name: Setup .NET 6
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Setup .NET 7
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 7.0.x
     - name: Run tests
@@ -99,8 +137,21 @@ jobs:
           path: ${{ env.NuGetDirectory }}
 
       # Install the .NET SDK indicated in the global.json file
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core 3
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup .NET 5
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 5.0.x
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+      - name: Setup .NET 7
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 7.0.x
 
