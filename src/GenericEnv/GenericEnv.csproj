@@ -19,6 +19,7 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageProjectUrl>https://github.com/KurnakovMaksim/GenericEnvironment</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
