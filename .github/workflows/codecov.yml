@@ -1,8 +1,6 @@
 name: codecov
 
 on:
-  push:
-    branches: [ ge-4 ]
   pull_request:
     branches: [ main ]
 jobs:
