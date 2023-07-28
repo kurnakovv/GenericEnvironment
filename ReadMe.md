@@ -6,6 +6,7 @@
  [![NuGet download](https://img.shields.io/nuget/dt/Kurnakov.GenericEnvironment.svg)](https://www.nuget.org/packages/Kurnakov.GenericEnvironment) 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FKurnakovMaksim%GenericEnvironment&countColor=%23263759&style=flat)
  [![Build/Test](https://github.com/KurnakovMaksim/GenericEnvironment/actions/workflows/dotnet.yml/badge.svg)](https://github.com/KurnakovMaksim/GenericEnvironment/actions/workflows/dotnet.yml)
+ [![Codecov](https://codecov.io/gh/kurnakovv/GenericEnvironment/branch/main/graph/badge.svg)](https://codecov.io/gh/kurnakovv/GenericEnvironment)
 
 
 </div>
