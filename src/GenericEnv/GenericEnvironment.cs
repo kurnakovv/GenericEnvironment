@@ -46,8 +46,8 @@ namespace GenericEnv
         /// [<see langword="false"/>, <paramref name="value"/>=<see langword="default"/>(<typeparamref name="TType"/>)] when an arithmetic, casting, or conversion operation in a checked context results in an overflow.<para></para>
         /// </summary>
         /// <typeparam name="TType">Type of environment variable value.</typeparam>
-        /// <param name="name">Name of environment variable</param>
-        /// <param name="value">Environment variable value</param>
+        /// <param name="name">Name of environment variable.</param>
+        /// <param name="value">Environment variable value.</param>
         /// <returns><see langword="true"/> if environment variable was gotten by <paramref name="name"/>; otherwise, <see langword="false"/>.</returns>
         public static bool TryGetEnvironmentVariable<TType>(string name, out TType value)
         {
