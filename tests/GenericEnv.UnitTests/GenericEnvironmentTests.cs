@@ -70,5 +70,46 @@ namespace GenericEnv.UnitTests
             Assert.Throws<FormatException>(() => GenericEnvironment.GetEnvironmentVariable<int>(NameConstants.String));
             Assert.Throws<FormatException>(() => GenericEnvironment.GetEnvironmentVariable<int>(NameConstants.Bool));
         }
+
+        [Fact(DisplayName = "Can get envrionment variable if exists.")]
+        public void TryGetEnvironmentVariable_CanGetEnvironmentVariableIfExists_TrueAndEnvironmentVariable()
+        {
+            bool result = GenericEnvironment.TryGetEnvironmentVariable(NameConstants.Int, out int value);
+            Assert.True(result);
+            Assert.IsType<int>(value);
+            Assert.Equal(ValueConstants.Int, value);
+        }
+
+        [Fact(DisplayName = "Can get environment when TType is nullable.")]
+        public void TryGetEnvironmentVariable_CanGetEnvironmentWhenTTypeIsNullable_TrueAndEnvironment()
+        {
+            bool result = GenericEnvironment.TryGetEnvironmentVariable(NameConstants.Int, out int? value);
+            Assert.True(result);
+            Assert.Equal(ValueConstants.Int, value);
+        }
+
+        [Fact(DisplayName = "Cannot get environment variable if name is null.")]
+        public void TryGetEnvironmentVariable_CannotGetEnvironmentVariableIfNameIsNull_FalseAndDefaultValueType()
+        {
+            bool result = GenericEnvironment.TryGetEnvironmentVariable(null, out int value);
+            Assert.False(result);
+            Assert.Equal(default(int), value);
+        }
+
+        [Fact(DisplayName = "Cannot get environment variable when it not found by name.")]
+        public void TryGetEnvironmentVariable_CannotGetEnvironmentVariableWhenItNotFoundByName_FalseAndDefaultValueType()
+        {
+            bool result = GenericEnvironment.TryGetEnvironmentVariable("GenericEnvironment_InvalidName", out int value);
+            Assert.False(result);
+            Assert.Equal(default(int), value);
+        }
+
+        [Fact(DisplayName = "Cannot get environment variable when it not found by name for nullable type.")]
+        public void TryGetEnvironmentVariable_CannotGetEnvironmentVariableWhenItNotFoundByNameForNullableType_FalseAndDefaultValueType()
+        {
+            bool result = GenericEnvironment.TryGetEnvironmentVariable("GenericEnvironment_InvalidName", out int? value);
+            Assert.False(result);
+            Assert.Equal(default(int?), value);
+        }
     }
 }

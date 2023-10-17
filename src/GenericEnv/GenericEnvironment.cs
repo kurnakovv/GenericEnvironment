@@ -35,5 +35,45 @@ namespace GenericEnv
             }
             return (TType)Convert.ChangeType(environmentVariable, typeof(TType));
         }
+
+        /// <summary>
+        /// Try get environment variable (generic <seealso cref="Environment.GetEnvironmentVariable"/>).<para></para>
+        /// [<see langword="true"/>, <paramref name="value"/>=<typeparamref name="TType"/>] when environment variable was found.<para></para>
+        /// [<see langword="false"/>, <paramref name="value"/>=<see langword="default"/>(<typeparamref name="TType"/>)] when <paramref name="name"/> is <see langword="null"/>.<para></para>
+        /// [<see langword="false"/>, <paramref name="value"/>=<see langword="default"/>(<typeparamref name="TType"/>)] when environment variable wasn't found.<para></para>
+        /// [<see langword="false"/>, <paramref name="value"/>=<see langword="default"/>(<typeparamref name="TType"/>)] when cannot convert environment variable to <typeparamref name="TType"/>.<para></para>
+        /// [<see langword="false"/>, <paramref name="value"/>=<see langword="default"/>(<typeparamref name="TType"/>)] when a security error is detected.<para></para>
+        /// [<see langword="false"/>, <paramref name="value"/>=<see langword="default"/>(<typeparamref name="TType"/>)] when an arithmetic, casting, or conversion operation in a checked context results in an overflow.<para></para>
+        /// </summary>
+        /// <typeparam name="TType">Type of environment variable value.</typeparam>
+        /// <param name="name">Name of environment variable</param>
+        /// <param name="value">Environment variable value</param>
+        /// <returns><see langword="true"/> if environment variable was gotten by <paramref name="name"/>; otherwise, <see langword="false"/>.</returns>
+        public static bool TryGetEnvironmentVariable<TType>(string name, out TType value)
+        {
+            value = default;
+            if (name == null)
+            {
+                return false;
+            }
+            string environmentVariable = Environment.GetEnvironmentVariable(name);
+            if (environmentVariable == null)
+            {
+                return false;
+            }
+            try
+            {
+                Type t = Nullable.GetUnderlyingType(typeof(TType)) ?? typeof(TType);
+                value = (TType)Convert.ChangeType(environmentVariable, t);
+                return true;
+            }
+            catch (Exception ex) when (
+                ex is FormatException ||
+                ex is SecurityException ||
+                ex is OverflowException)
+            {
+                return false;
+            }
+        }
     }
 }
