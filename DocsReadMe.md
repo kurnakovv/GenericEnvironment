@@ -16,16 +16,16 @@ TType GetEnvironmentVariable<TType>(string name)
 * Throw `SecurityException` when a security error is detected.
 * Throw `OverflowException` when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
 
-# Type Parameters
+## Type Parameters
 `TType` - Type of environment variable value.
 
-# Parameters
+## Parameters
 `name` - Name of environment variable.
 
-# Returns
+## Returns
 `TType` value.
 
-# Code examples
+## Code examples
 ``` cs
 // Setup (or get from launchSettings.json)
 Environment.SetEnvironmentVariable("YourIntVariable", "12345");
