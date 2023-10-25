@@ -52,6 +52,9 @@ GenericEnvironment.GetEnvironmentVariable<bool?>("YourBoolVariable"); // Invalid
 GenericEnvironment.GetEnvironmentVariable<bool>("YourIntVariable"); // FormatException because cannot convert variable to type (bool -> int)
 ```
 
+# Full docs
+* [GenericEnvironment.GetEnvironmentVariable](DocsReadMe.md#GenericEnvironment.GetEnvironmentVariable)
+
 # Reason
 C# is a strictly typed language and I want to work environment variables as strictly typed variables. This library solves this problem.
 
