@@ -111,5 +111,19 @@ namespace GenericEnv.UnitTests
             Assert.False(result);
             Assert.Equal(default(int?), value);
         }
+
+        [Fact(DisplayName = "Can get environment variable if exists.")]
+        public void GetEnvironmentVariableOrDefault_CanGetEnvironmentVariableIfExists_Int()
+        {
+            int result = GenericEnvironment.GetEnvironmentVariableOrDefault<int>(NameConstants.Int);
+            Assert.Equal(ValueConstants.Int, result);
+        }
+
+        [Fact(DisplayName = "Cannot get environment variable when it not found by name.")]
+        public void GetEnvironmentVariableOrDefault_CannotGetEnvironmentVariableWhenItNotFoundByName_Default()
+        {
+            int? result = GenericEnvironment.GetEnvironmentVariableOrDefault<int?>("GenericEnvironment_InvalidName");
+            Assert.Null(result);
+        }
     }
 }
