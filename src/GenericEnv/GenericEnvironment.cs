@@ -75,5 +75,24 @@ namespace GenericEnv
                 return false;
             }
         }
+
+        /// <summary>
+        /// Get environment variable or <see langword="default"/>(<typeparamref name="TType"/>) (generic <seealso cref="Environment.GetEnvironmentVariable"/>).<para></para>
+        /// <typeparamref name="TType"/> when environment variable was found.<para></para>
+        /// <see langword="default"/>(<typeparamref name="TType"/>) when <paramref name="name"/> is <see langword="null"/>.<para></para>
+        /// <see langword="default"/>(<typeparamref name="TType"/>) when environment variable wasn't found.<para></para>
+        /// <see langword="default"/>(<typeparamref name="TType"/>) when cannot convert environment variable to <typeparamref name="TType"/>.<para></para>
+        /// <see langword="default"/>(<typeparamref name="TType"/>) when a security error is detected.<para></para>
+        /// <see langword="default"/>(<typeparamref name="TType"/>) when an arithmetic, casting, or conversion operation in a checked context results in an overflow.<para></para>
+        /// </summary>
+        /// <typeparam name="TType">Type of environment variable value.</typeparam>
+        /// <param name="name">Name of environment variable.</param>
+        /// <returns>Environment variable or <see langword="default"/>(<typeparamref name="TType"/>).</returns>
+        public static TType GetEnvironmentVariableOrDefault<TType>(string name)
+        {
+            return TryGetEnvironmentVariable(name, out TType type)
+                ? type
+                : default(TType);
+        }
     }
 }
