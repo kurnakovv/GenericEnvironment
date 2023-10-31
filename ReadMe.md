@@ -54,7 +54,7 @@ GenericEnvironment.GetEnvironmentVariable<bool>("YourIntVariable"); // FormatExc
 
 # Full docs
 * [GenericEnvironment.GetEnvironmentVariable](DocsReadMe.md#GenericEnvironment.GetEnvironmentVariable)
-* [GenericEnvironment.TryGetEnvironmentVariable](DocsReadMe.md#GenericEnvironment.TryGetEnvironmentVariable)
+* [GenericEnvironment.TryGetEnvironmentVariable](DocsReadMe.md#genericenvironmenttrygetenvironmentvariable)
 
 # Reason
 C# is a strictly typed language and I want to work environment variables as strictly typed variables. This library solves this problem.
