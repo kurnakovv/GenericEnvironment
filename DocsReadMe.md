@@ -81,3 +81,40 @@ bool secondResult =  GenericEnvironment.TryGetEnvironmentVariable("InvalidEnviro
 // [firstResult, firstValue] = [true, 12345]
 // [secondResult, secondValue] = [false, 0]
 ```
+
+# GenericEnvironment.GetEnvironmentVariableOrDefault
+
+## Description
+Get environment variable or default(TType) (generic [Environment.GetEnvironmentVariable](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getenvironmentvariable?view=net-7.0)).
+## Signature
+```cs
+TType GetEnvironmentVariableOrDefault<TType>(string name)
+```
+## Use cases
+* TType when environment variable was found.
+* default(TType) when `name` is null.
+* default(TType) when environment variable wasn't found.
+* default(TType) when cannot convert environment variable to `TType`.
+* default(TType) when a security error is detected.
+* default(TType) when an arithmetic, casting, or conversion operation in a checked context results in an overflow.
+
+## Type Parameters
+`TType` - Type of environment variable value.
+## Parameters
+`name` - Name of environment variable
+## Returns
+Environment variable or default(TType).
+
+## Code examples
+```cs
+// Setup
+Environment.SetEnvironmentVariable("IntEnvironmentVariable", "12345"); // or from launchSettings.json
+
+// Code
+int firstResult = GenericEnvironment.GetEnvironmentVariableOrDefault<int>("IntEnvironmentVariable");
+bool secondResult =  GenericEnvironment.GetEnvironmentVariableOrDefault<int>("InvalidEnvironmentVariableName");
+
+// Output
+// firstResult - 12345
+// secondResult - 0
+```
