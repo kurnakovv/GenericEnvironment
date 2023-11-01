@@ -53,7 +53,7 @@ GenericEnvironment.GetEnvironmentVariable<bool>("YourIntVariable"); // FormatExc
 ```
 
 # Full docs
-* [GenericEnvironment.GetEnvironmentVariable](DocsReadMe.md#GenericEnvironment.GetEnvironmentVariable)
+* [GenericEnvironment.GetEnvironmentVariable](DocsReadMe.md#genericenvironmentgetenvironmentvariable)
 * [GenericEnvironment.TryGetEnvironmentVariable](DocsReadMe.md#genericenvironmenttrygetenvironmentvariable)
 * [GenericEnvironment.GetEnvironmentVariableOrDefault](DocsReadMe.md#genericenvironmentgetenvironmentvariableordefault)
 
